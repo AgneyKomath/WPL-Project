@@ -31,12 +31,6 @@ if (!$result) {
     echo "An error occurred while executing the query.<br>";
     exit();
 }
-
-
-
-
-
-
 ?>
 
 <!DOCTYPE html>
