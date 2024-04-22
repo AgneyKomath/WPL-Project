@@ -24,7 +24,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result && pg_num_rows($result) == 1) {
         // Login successful
         // Start a session and set a variable to indicate the user is logged in
-        $_SESSION['user_id'] = $username;
+        $row = pg_fetch_assoc($result);
+        $_SESSION['user_id'] = $row['client_id'];
         
         // Redirect user to home page
         header("Location: home.php");

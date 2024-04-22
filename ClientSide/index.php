@@ -32,13 +32,13 @@ if(isset($_SESSION['user_id'])) {
         </div>
     </div>
 
-    <!-- <main>
+    <main>
         <article class="cont">
 
             <blockquote class="quote">"Transport is not a privilege, it's a right!"</blockquote>
 
         </article>
-    </main> -->
+    </main>
 
 </body>
 </html>

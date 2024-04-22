@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: "Raleway", sans-serif;
+}
+
+body {
+    background-image: url(../images/truckPhoto.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+header {
+    background-color: #386641;
+    height: 10vh;
+    color: white;
+    display: flex;
+    align-items: center;
+
+}
+
+header h1 {
+    padding-left: 0.5em;
+    display: inline-block;
+}
+
+header h1 a {
+    text-decoration: none;
+    color: white;
+}
+
+header h2{
+    padding-left: 40%;
+    font-size: 30px;
+}
+
+nav{
+    position: relative;
+    /* width: 100%; */
+}
+
+.navbar {
+    background-color: #388841;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar ul {
+    display: inline-block;
+}
+
+.navbar li {
+    display: inline-block;
+    padding: 1em;
+    color: white;
+    background-color: #388841;
+    /* border: 1px solid white; */
+}
+
+.navbar li:hover {
+    filter: brightness(90%);
+    cursor: pointer;
+}
+
+.navbar li a {
+    color: white;
+}
+.navbar li a i {
+    padding: 0 1em;
+}
+
+.navbar span {
+    font-size: 20px;
+    color: white;
+    padding: 0 2vw;
+    padding-top: 0.6em;
+    background-color: #388841;
+}
+
+.navbar span:hover {
+    filter: brightness(90%);
+    cursor: pointer;
+}
+
+.logout i{
+    margin-left:10px;
+}
+
+.logout a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    height: 100%;
+    transition: 0.1s;
+    background-color: #388841;
+    
+}
+
+.logout a:hover{
+    filter: brightness(90%);
+}
+
+main{
+    /* margin-right: 10%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+table {
+    border-collapse: collapse;
+    border-radius: 20px;
+    width: 100%;
+}
+
+th, td {
+    /* border: 1px solid #CCC; */
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #81C14B;
+    height: 100px;
+    font-size: 30px;
+    
+}
+
+tr {
+    background-color: white;
+    height: 100px;
+    font-size: 20px;
+    font-weight: normal;
+    transition: 0.05s;
+}
+
+
+
+tr:hover {
+    background-color: #ddd;
+}
+
+
+
+
+
+
+
+

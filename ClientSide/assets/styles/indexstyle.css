@@ -62,18 +62,19 @@ body {
 
 }
 
-
-
-
+main{
+    margin-top: 10vh;
+    margin-right: 10%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
 
 .cont {
-    position: absolute;
-    margin: auto;
-    height: 70%;
-    width: 20%;
+    height: 36rem;
+    width: 40rem;
     background-color: white;
-    /* top: 25%;
-    left: 50%; */
+
     opacity: 0.65;
     border-radius: 5%;
 }
@@ -83,3 +84,6 @@ body {
     font-weight: 400;
     padding: 3rem;
 }
+
+
+
