@@ -24,7 +24,8 @@ if (!$connection) {
 }
 
 // Query to select all rows from the products table
-$query = "SELECT * FROM orders WHERE user_id = " . $_SESSION['user_id']." AND order_status = false";
+// $query = "SELECT * FROM orders WHERE user_id = " . $_SESSION['user_id']." AND order_status = false";
+$query = "SELECT * FROM orders WHERE user_id = " . $_SESSION['user_id']."";
 $result = pg_query($connection, $query);
 
 if (!$result) {
@@ -95,9 +96,9 @@ if (!$result) {
 
                     $status1='';
 
-                    if ($row['order_status'] == true) {
+                    if ($row['order_status']=='t') {
                         $status1 = 'Order Delivered';
-                    } else if($row['order_status'] == false){
+                    } else {
                         $status1 = 'Order Being Shipped';
                     }                   
 
@@ -108,7 +109,7 @@ if (!$result) {
                     echo "<tr>";
                     echo "<td>" . $row['order_id'] . "</td>";
                     echo "<td>" . $product['product_name']. "</td>";
-                    echo "<td>" . $status1 . "</td>";
+                    echo "<td>" . $status1 ."</td>";
                     // Add more cells for additional columns if needed
                     echo "</tr>";
                 }
