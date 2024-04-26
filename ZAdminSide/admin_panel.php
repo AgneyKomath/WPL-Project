@@ -7,6 +7,16 @@ if(!isset($_SESSION['admin_user'])) {
     exit();
 }
 
+if (isset($_GET['logout'])) {
+    // Destroy the session
+    session_destroy();
+    
+    // Redirect to the login page or any other page after logout
+    header("Location: index.php");
+    exit();
+}
+
+
 $connection = pg_connect("host=localhost dbname=TRANSPORT user=postgres password=kjsce");
 
 if (!$connection) {
@@ -42,6 +52,7 @@ $result_orders = pg_query($connection, $query);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel</title>
     <link rel="stylesheet" href="assets/styles/styles.css">
+    <script src="https://kit.fontawesome.com/f18c4a11f7.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -57,9 +68,10 @@ $result_orders = pg_query($connection, $query);
             <li><a href="manage_raw_material.php">Manage Raw Material</a></li>
         </ul>
 
-        <form action="logout.php" method="post">
-            <button type="submit">Logout</button>
-        </form>
+        <div class="logout">
+            <a href="?logout"> <button>Logout  <i class="fa-solid fa-right-from-bracket"></i></button></a>
+        </div>
+
     </aside>
 
     <main>

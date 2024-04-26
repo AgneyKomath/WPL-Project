@@ -168,3 +168,13 @@ aside form button:hover {
 .back-btn.button:hover {
     background-color: #c0392b;
 }
+
+.logout button{
+    background-color: #e74c3c;
+}
+
+.logout:hover {
+    background-color: #c0392b;
+}
+
+

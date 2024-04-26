@@ -27,16 +27,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = pg_query($connection, $query);
 
     if ($result) {
-        $_SESSION['user_id'] = $username;
-        
         // Set session timeout to 1 hour (3600 seconds)
         $_SESSION['timeout'] = time() + 3600;
         header("Location: home.php");
-        exit();
+        $query1 = "SELECT * FROM client WHERE client_username = '$username' AND client_password = '$password'";
+        $result1 = pg_query($connection, $query);
+
+        if ($result && pg_num_rows($result) == 1) {
+            // Login successful
+            // Start a session and set a variable to indicate the user is logged in
+            $row = pg_fetch_assoc($result);
+            $_SESSION['user_id'] = $row['client_id'];
+            
+            // Redirect user to home page
+            header("Location: home.php");
+            exit();
+        } else {
+            // Login failed
+            $error = "Invalid username or password. Please try again.";
+    }
     } else {
         // Registration failed
         $error = "Registration failed. Please try again.";
     }
+    
 }
 ?>
 
